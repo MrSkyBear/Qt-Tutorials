@@ -18,9 +18,13 @@ public:
 private slots:
     void on_findButton_clicked();
 
+    void on_wrapRadioButton_toggled(bool checked);
+
 private:
     Ui::TextFinder *ui;
     void loadTextFile();
+    void resetCursor();
+    bool wrapSearch;
 };
 
 #endif // TEXTFINDER_H

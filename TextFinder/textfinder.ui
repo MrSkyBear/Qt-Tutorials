@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>403</width>
+    <height>388</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,6 +43,13 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="wrapRadioButton">
+      <property name="text">
+       <string>Wrap Search</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QTextEdit" name="textEdit"/>

@@ -8,6 +8,7 @@ TextFinder::TextFinder(QWidget *parent) :
     ui(new Ui::TextFinder)
 {
     ui->setupUi(this);
+    wrapSearch = false;
     loadTextFile();
 }
 
@@ -19,7 +20,15 @@ TextFinder::~TextFinder()
 void TextFinder::on_findButton_clicked()
 {
     QString searchString = ui->searchBox->text();
+
+    // Searches starting from the cursor's current position.
     bool found = ui->textEdit->find(searchString, QTextDocument::FindWholeWords);
+
+    if (!found && wrapSearch)
+    {
+        resetCursor();
+        ui->textEdit->find(searchString, QTextDocument::FindWholeWords);
+    }
 }
 
 void TextFinder::loadTextFile()
@@ -32,6 +41,17 @@ void TextFinder::loadTextFile()
     inputFile.close();
 
     ui->textEdit->setPlainText(line);
+    resetCursor();
+}
+
+void TextFinder::resetCursor()
+{
     QTextCursor cursor = ui->textEdit->textCursor();
     cursor.movePosition(QTextCursor::Start, QTextCursor::MoveAnchor, 1);
+    ui->textEdit->setTextCursor(cursor);
+}
+
+void TextFinder::on_wrapRadioButton_toggled(bool checked)
+{
+    wrapSearch = checked;
 }

@@ -18,6 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -33,13 +34,14 @@ public:
     QLabel *label;
     QLineEdit *searchBox;
     QPushButton *findButton;
+    QRadioButton *wrapRadioButton;
     QTextEdit *textEdit;
 
     void setupUi(QWidget *TextFinder)
     {
         if (TextFinder->objectName().isEmpty())
             TextFinder->setObjectName(QStringLiteral("TextFinder"));
-        TextFinder->resize(400, 300);
+        TextFinder->resize(403, 388);
         widget = new QWidget(TextFinder);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(10, 10, 381, 271));
@@ -69,6 +71,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        wrapRadioButton = new QRadioButton(widget);
+        wrapRadioButton->setObjectName(QStringLiteral("wrapRadioButton"));
+
+        verticalLayout->addWidget(wrapRadioButton);
+
         textEdit = new QTextEdit(widget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
 
@@ -85,6 +92,7 @@ public:
         TextFinder->setWindowTitle(QApplication::translate("TextFinder", "TextFinder", Q_NULLPTR));
         label->setText(QApplication::translate("TextFinder", "Keyword:", Q_NULLPTR));
         findButton->setText(QApplication::translate("TextFinder", "Find", Q_NULLPTR));
+        wrapRadioButton->setText(QApplication::translate("TextFinder", "Wrap Search", Q_NULLPTR));
     } // retranslateUi
 
 };
