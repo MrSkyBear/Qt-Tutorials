@@ -20,7 +20,6 @@ void TextFinder::on_findButton_clicked()
 {
     QString searchString = ui->searchBox->text();
     bool found = ui->textEdit->find(searchString, QTextDocument::FindWholeWords);
-    int x = 5;
 }
 
 void TextFinder::loadTextFile()
