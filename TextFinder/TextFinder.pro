@@ -29,3 +29,6 @@ SOURCES += main.cpp\
 HEADERS  += textfinder.h
 
 FORMS    += textfinder.ui
+
+RESOURCES += \
+    textfinder-resource.qrc
