@@ -1,6 +1,7 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Styles 1.4
 
 Item {
     id: content
@@ -76,7 +77,10 @@ Item {
 
     RowLayout {
         id: rowLayout
-        width: 100
+        y: 348
+        anchors.left: parent.right
+        anchors.leftMargin: -220
+        spacing: 8
         anchors.right: parent.right
         anchors.rightMargin: 12
         anchors.bottom: parent.bottom
@@ -87,6 +91,10 @@ Item {
             text: qsTr("Save")
             Layout.fillHeight: true
             Layout.fillWidth: true
+            background: Rectangle {
+                border.color: "#888"
+                radius: 4
+            }
         }
 
         Button {
@@ -94,6 +102,10 @@ Item {
             text: qsTr("Cancel")
             Layout.fillHeight: true
             Layout.fillWidth: true
+            background: Rectangle {
+                border.color: "#888"
+                radius: 4
+            }
         }
     }
 }
