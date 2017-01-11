@@ -93,7 +93,7 @@ Item {
             Layout.fillWidth: true
             background: Rectangle {
                 border.color: "#888"
-                radius: 4
+                radius: 6
             }
         }
 
@@ -104,7 +104,7 @@ Item {
             Layout.fillWidth: true
             background: Rectangle {
                 border.color: "#888"
-                radius: 4
+                radius: 6
             }
         }
     }
