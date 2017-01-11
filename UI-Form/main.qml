@@ -12,15 +12,57 @@ ApplicationWindow {
         Menu {
             title: qsTr("File")
             MenuItem {
-                text: qsTr("&Open")
-                onTriggered: console.log("Open action triggered");
-            }
-            MenuItem {
                 text: qsTr("Exit")
                 onTriggered: Qt.quit();
             }
         }
+        Menu {
+           title: qsTr("&Edit")
+           MenuItem {
+               action: cutAction
+           }
+           MenuItem {
+               action: copyAction
+           }
+           MenuItem {
+               action: pasteAction
+           }
+       }
+       Menu {
+           title: qsTr("&Help")
+           MenuItem {
+               text: qsTr("About...")
+               onTriggered: aboutDialog.open()
+           }
+       }
     }
+
+   Action {
+       id: copyAction
+       text: qsTr("&Copy")
+       shortcut: StandardKey.Copy
+       iconName: "edit-copy"
+       enabled: (!!activeFocusItem && !!activeFocusItem["copy"])
+       onTriggered: activeFocusItem.copy()
+   }
+
+   Action {
+       id: cutAction
+       text: qsTr("Cu&t")
+       shortcut: StandardKey.Cut
+       iconName: "edit-cut"
+       enabled: (!!activeFocusItem && !!activeFocusItem["cut"])
+       onTriggered: activeFocusItem.cut()
+   }
+
+   Action {
+       id: pasteAction
+       text: qsTr("&Paste")
+       shortcut: StandardKey.Paste
+       iconName: "edit-paste"
+       enabled: (!!activeFocusItem && !!activeFocusItem["paste"])
+       onTriggered: activeFocusItem.paste()
+   }
 
     MainForm {
         anchors.fill: parent
