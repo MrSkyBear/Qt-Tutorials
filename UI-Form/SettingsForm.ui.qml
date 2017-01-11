@@ -6,17 +6,17 @@ Item {
     id: content
     width: 400
     height: 400
+    property alias gridLayout1: gridLayout1
+    property alias customerId: customerId
+    property alias lastName: lastName
+    property alias firstName: firstName
+    property alias title: title
     property alias cancel: cancel
     property alias save: save
-    property alias comboBox: comboBox
-    property alias textField2: textField2
-    property alias textField1: textField1
-    property alias textField: textField
     property alias rowLayout: rowLayout
-    property alias gridLayout: gridLayout
 
     GridLayout {
-        id: gridLayout
+        id: gridLayout1
         height: 100
         rows: 4
         columns: 3
@@ -45,17 +45,20 @@ Item {
         }
 
         ComboBox {
-            id: comboBox
+            id: title
+            Layout.fillWidth: true
         }
 
         TextField {
-            id: textField
+            id: firstName
             text: qsTr("First Name")
+            Layout.fillWidth: true
         }
 
         TextField {
-            id: textField1
+            id: lastName
             text: qsTr("Last Name")
+            Layout.fillWidth: true
         }
 
         Label {
@@ -64,7 +67,7 @@ Item {
         }
 
         TextField {
-            id: textField2
+            id: customerId
             text: qsTr("Customer Id")
             Layout.fillWidth: true
             Layout.columnSpan: 3

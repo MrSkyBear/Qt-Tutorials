@@ -8,10 +8,10 @@ Item {
     property alias tableView1: tableView1
 
     SplitView {
-        id: splitView
+        id: splitView1
         anchors.fill: parent
 
-        TableView {
+        CustomerTableView {
             id: tableView1
         }
 

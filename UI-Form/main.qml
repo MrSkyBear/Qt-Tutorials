@@ -2,6 +2,7 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.1
+
 import my.customermodel.singleton 1.0
 
 ApplicationWindow {
@@ -75,12 +76,11 @@ ApplicationWindow {
     }
 
     MessageDialog {
-        id: messageDialog
-        title: qsTr("May I have your attention, please?")
-
-        function show(caption) {
-            messageDialog.text = caption;
-            messageDialog.open();
-        }
+        id: aboutDialog
+        icon: StandardIcon.Information
+        title: qsTr("About")
+        text: "Qt Quick UI Forms"
+        informativeText: qsTr("This example shows how to separate the " +
+                              "implementation of an application from the UI using ui.qml files")
     }
 }

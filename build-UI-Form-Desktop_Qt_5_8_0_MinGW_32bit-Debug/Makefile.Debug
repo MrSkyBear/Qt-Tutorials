@@ -94,10 +94,10 @@ debug/qrc_qml.cpp: ../UI-Form/qml.qrc \
 		C:/Qt/5.8/mingw53_32/bin/rcc.exe \
 		../UI-Form/MainForm.ui.qml \
 		../UI-Form/NotesForm.ui.qml \
+		../UI-Form/CustomerTableView.qml \
 		../UI-Form/Settings.qml \
 		../UI-Form/History.qml \
 		../UI-Form/SettingsForm.ui.qml \
-		../UI-Form/TableView.ui.qml \
 		../UI-Form/CustomerModelSingleton.qml \
 		../UI-Form/Notes.qml \
 		../UI-Form/main.qml \

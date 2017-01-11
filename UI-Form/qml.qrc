@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
-        <file>TableView.ui.qml</file>
         <file>CustomerModelSingleton.qml</file>
         <file>Settings.qml</file>
         <file>SettingsForm.ui.qml</file>
@@ -10,5 +9,6 @@
         <file>NotesForm.ui.qml</file>
         <file>HistoryTableView.qml</file>
         <file>History.qml</file>
+        <file>CustomerTableView.qml</file>
     </qresource>
 </RCC>

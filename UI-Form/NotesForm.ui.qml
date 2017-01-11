@@ -6,9 +6,9 @@ Item {
     id: content
     width: 400
     height: 400
+    property alias textArea1: textArea1
     property alias cancel: cancel
     property alias save: save
-    property alias textArea: textArea
 
     ColumnLayout {
         id: columnLayout
@@ -21,8 +21,8 @@ Item {
         anchors.topMargin: 12
 
         TextArea {
-            id: textArea
-            text: qsTr("Text Area")
+            id: textArea1
+            text: qsTr("Customer Notes")
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
