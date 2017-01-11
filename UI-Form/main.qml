@@ -2,6 +2,7 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.1
+import my.customermodel.singleton 1.0
 
 ApplicationWindow {
     visible: true
@@ -27,6 +28,8 @@ ApplicationWindow {
         Layout.minimumHeight: 480
         Layout.preferredWidth: 768
         Layout.preferredHeight: 480
+        tableView1.model: CustomerModel
+        Component.onCompleted: CustomerModel.selection = tableView1.selection
     }
 
     MessageDialog {

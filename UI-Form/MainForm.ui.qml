@@ -5,21 +5,42 @@ import QtQuick.Layouts 1.1
 Item {
     width: 640
     height: 480
+    property alias tableView1: tableView1
 
-    property alias button1: button1
-    property alias button2: button2
+    SplitView {
+        id: splitView
+        anchors.fill: parent
 
-    RowLayout {
-        anchors.centerIn: parent
-
-        Button {
-            id: button1
-            text: qsTr("Press Me 1")
+        TableView {
+            id: tableView1
         }
 
-        Button {
-            id: button2
-            text: qsTr("Press Me 2")
+        TabView {
+            id: tabView
+            width: 360
+            height: 300
+
+            Tab {
+                id: settings
+                title: "Customer Settings"
+                source: "Settings.qml"
+            }
+
+            Tab {
+                id: notes
+                x: -3
+                y: -9
+                title: "Customer Notes"
+                source: "Notes.qml"
+            }
+
+            Tab {
+                id: history
+                x: -7
+                y: -8
+                title: "Customer History"
+                source: "History.qml"
+            }
         }
     }
 }
